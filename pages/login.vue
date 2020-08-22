@@ -18,6 +18,7 @@
 <script>
 import { login } from '~/services/auth.js'
 import Spinner from '~/components/Spinner.vue'
+import { params } from '~/configuration'
 
 export default {
   middleware: 'authenticated',
@@ -31,11 +32,6 @@ export default {
   },
   methods: {
     login () {
-      const params = {
-        client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
-        redirect_uri: 'http://localhost:3000/login'
-      }
       login(params)
       this.spinner = true
     }

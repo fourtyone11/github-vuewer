@@ -1,5 +1,6 @@
 import cookieparser from 'cookieparser'
-import { handleCallback } from '../services/auth.js'
+import { handleCallback } from '~/services/auth.js'
+import { params } from '~/configuration'
 
 export default async function ({ app, store, redirect, route, req }) {
   if (store.state.auth.user && route.path === '/login') {
@@ -10,13 +11,6 @@ export default async function ({ app, store, redirect, route, req }) {
       if (accessToken) {
         return
       }
-    }
-
-    const params = {
-      client_id: process.env.CLIENT_ID,
-      client_secret: process.env.CLIENT_SECRET,
-      redirect_uri: process.env.REDIRECT_URI,
-      scope: 'public_repos, user'
     }
 
     try {
