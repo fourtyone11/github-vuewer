@@ -14,6 +14,7 @@ export const actions = {
         })
         app.$axios.setToken(parsed.access_token, 'Bearer')
       } catch (err) {
+        app.$cookies.remove('access_token')
         commit('auth/setError', err)
       }
     }
