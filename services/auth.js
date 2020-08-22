@@ -46,7 +46,7 @@ export function login (params) {
 }
 
 export function logout (ctx) {
-  return ctx.$axios.delete(`${process.env.APP_URL}/api/logout`)
+  return ctx.$axios.delete('/api/logout')
 }
 
 export function getUser (ctx, accessToken) {
