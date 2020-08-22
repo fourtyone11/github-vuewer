@@ -24,6 +24,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  env: {
+    CLIENT_ID: process.env.CLIENT_ID || '',
+    CLIENT_SECRET: process.env.CLIENT_SECRET || '',
+    REDIRECT_URI: process.env.REDIRECT_URI || 'http://localhost:3000/login'
+  },
+
   /*
   ** Global CSS
   */
